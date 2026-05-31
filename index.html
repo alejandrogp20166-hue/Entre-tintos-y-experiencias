@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia: "Entre Tintos y Experiencias" - Informe Ejecutivo</title>
+    <!-- Tailwind CSS para diseño ejecutivo -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcfbfa;
+        }
+        .bg-sena-green { background-color: #00a650; }
+        .text-sena-green { color: #00a650; }
+        .border-sena-green { border-color: #00a650; }
+        .bg-cafe-dark { background-color: #2b1d16; }
+        .bg-cafe-light { background-color: #efebe9; }
+        .text-cafe { color: #5d4037; }
+        
+        /* Estilos de pestañas activas */
+        .tab-btn.active {
+            background-color: #00a650;
+            color: white;
+            border-color: #00a650;
+            box-shadow: 0 4px 6px -1px rgba(0, 166, 80, 0.2);
+        }
+
+        /* Estilo para resaltar la región seleccionada de la lista */
+        .region-item-btn.active-region {
+            background-color: #e6f6ee;
+            border-color: #00a650;
+            color: #00a650;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="min-h-screen flex flex-col justify-between">
+        
+        <!-- ENCABEZADO INSTITUCIONAL / METADATOS DE DESTINATARIOS -->
+        <header class="bg-cafe-dark text-white shadow-xl border-b-4 border-sena-green">
+            <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-6">
+                    <!-- Logo SENA -->
+                    <div class="bg-white p-2 rounded-xl shadow-inner flex items-center justify-center w-20 h-20 overflow-hidden">
+                        <img src="logoSena.png" alt="SENA Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-sena-green">Escuela Nacional de Instructores Rodolfo Martínez Tono</span>
+                        <h1 class="text-2xl md:text-3xl font-bold mt-1">Estrategia: "Entre Tintos y Experiencias"</h1>
+                        <p class="text-sm text-gray-300 italic mt-1">"Dispositivo de comunicación empática y diálogo genuino"</p>
+                    </div>
+                </div>
+                
+                <!-- Destinatarios (Estilo Ejecutivo) -->
+                <div class="bg-black/20 p-4 rounded-xl text-xs space-y-1.5 border border-white/10 w-full md:w-auto min-w-[320px]">
+                    <div><span class="text-gray-400 font-semibold uppercase">Dirigido a:</span></div>
+                    <div><span class="font-bold text-white text-sm">Dra. Claudia Patricia Forero Londoño</span></div>
+                    <div class="text-gray-300">Dirección de Formación Profesional Integral</div>
+                    <div class="pt-1.5 border-t border-white/10 mt-1.5">
+                        <span class="font-bold text-white">Profesional Paula Andrea Becerra Ramírez</span></div>
+                    <div class="text-gray-300">Coordinadora Escuela Nacional de Instructores</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- BARRA DE NAVEGACIÓN POR PESTAÑAS (Estructura de Marco Lógico) -->
+        <div class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 overflow-x-auto flex space-x-2 py-3 scrollbar-none">
+                <button onclick="switchTab('justificacion')" class="tab-btn active whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-mug-hot"></i> 1. Justificación y Fundamentos
+                </button>
+                <button onclick="switchTab('marco-logico')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-sitemap"></i> 2. Estructura de Marco Lógico
+                </button>
+                <button onclick="switchTab('dashboard')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-chart-pie"></i> 3. Dashboard Operativo
+                </button>
+                <button onclick="switchTab('territorio')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-map-location-dot"></i> 4. Despliegue Territorial
+                </button>
+                <button onclick="switchTab('componentes')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-list-check"></i> 5. Matriz de Componentes
+                </button>
+            </div>
+        </div>
+
+        <!-- CUERPO DEL INFORME -->
+        <main class="max-w-7xl mx-auto px-6 py-8 flex-grow w-full">
+            
+            <!-- SECCIÓN 1: JUSTIFICACIÓN Y FUNDAMENTACIÓN -->
+            <section id="justificacion" class="tab-content block space-y-8 animate-fade-in">
+                <!-- Banner Alusivo al Café -->
+                <div class="relative bg-cafe-dark rounded-3xl overflow-hidden shadow-lg min-h-[220px] flex items-center p-8 text-white">
+                    <div class="absolute inset-0 opacity-15 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=1000');"></div>
+                    <div class="relative z-10 max-w-3xl">
+                        <span class="bg-sena-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Identidad y Pedagogía</span>
+                        <h2 class="text-2xl md:text-3xl font-bold mt-2">Justificación y Fundamentación Metodológica</h2>
+                        <p class="text-gray-300 text-sm mt-2 leading-relaxed">
+                            El nombre de la estrategia "Entre Tintos y Experiencias", promovida por la Escuela Nacional de Instructores Rodolfo Martínez Tono, rinde homenaje a una de las tradiciones más cálidas, horizontales y arraigadas de la identidad colombiana.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Columna Literales Históricos -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <h3 class="text-lg font-bold text-cafe border-b pb-2 mb-4"><i class="fa-solid fa-history mr-2 text-sena-green"></i> Origen Cultural del Tinto</h3>
+                            <p class="text-gray-700 text-sm leading-relaxed text-justify">
+                                Históricamente, el grano de café -cuya expansión desde el siglo XVIII lo consolidó como símbolo inequívoco de hospitalidad- propició una práctica cultural única en las clases populares: al observar cómo el filtrado teñía el agua de un tono oscuro y traslúcido similar al vino tinto (un bien entonces importado y costoso), acuñaron metafóricamente el término "un tinto" para describir el compartir cotidiano de esta bebida impregnada del sabor de nuestra tierra.
+                            </p>
+                            <div class="mt-4 p-4 bg-cafe-light/50 rounded-xl border-l-4 border-cafe text-xs text-cafe italic">
+                                Al adoptar este legado, la Escuela Nacional de Instructores (ENI) configura un dispositivo de comunicación empática y diálogo genuino. Una taza de café invita a pausar el día para conversar sin prisa, escuchar las realidades locales y construir colectivamente la excelencia y calidad en la formación profesional integral desde el reconocimiento mutuo.
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                            <h3 class="text-lg font-bold text-cafe border-b pb-2 mb-4"><i class="fa-solid fa-graduation-cap mr-2 text-sena-green"></i> Fundamentos Pedagógicos</h3>
+                            <p class="text-gray-700 text-sm leading-relaxed mb-4 text-justify">
+                                Esta apuesta por la cercanía se fundamenta firmemente en los principios de la pedagogía crítica y el aprendizaje dialógico, deconstruyendo los modelos tradicionales de transferencia vertical y asimétrica de conocimiento. La Escuela abraza la convicción de que el saber pedagógico no se impone de manera unilateral, sino que se co-construye a través del encuentro horizontal y respetuoso.
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                                <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                                    <span class="text-xs font-bold text-sena-green uppercase block mb-1">Paulo Freire</span>
+                                    <p class="text-xs italic text-gray-700">"nadie educa a nadie, así como nadie se educa a sí mismo: los homes se educan entre sí, mediatizados por el mundo".</p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-xl border border-green-100">
+                                    <span class="text-xs font-bold text-sena-green uppercase block mb-1">Ramón Flecha</span>
+                                    <p class="text-xs italic text-gray-700">...la estrategia reconoce y valora la "inteligencia cultural" y la experiencia acumulada de los instructores en las regiones, transformando la mesa de diálogo en un escenario de validez mutua donde el saber de la Colombia profunda se convierte en el motor principal de la innovación institucional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Mediación Relacional -->
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between h-full">
+                            <div>
+                                <h3 class="text-lg font-bold text-cafe border-b pb-2 mb-4"><i class="fa-solid fa-brain mr-2 text-sena-green"></i> El Café como Mediación Relacional</h3>
+                                <p class="text-xs text-gray-500 mb-4">Dentro de la Estrategia Entre Tintos, el café deja de ser un elemento de consumo y se transforma en una herramienta estratégica de la comunicación asertiva y la psicología relacional:</p>
+                                
+                                <div class="space-y-4">
+                                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                                        <h4 class="text-xs font-bold text-cafe uppercase mb-1">De la Prevención a la Apertura (Reducción de Asimetrías)</h4>
+                                        <p class="text-[11px] text-gray-600 text-justify">Al recibir equipos de la Dirección General o equipos de Bogotá en los territorios, suele manifestarse una barrera comunicativa natural basada en la percepción de verticalidad ("vienen a imponer lineamientos"). El tinto actúa como un nivelador relacional. Alrededor de una taza de café se diluyen las distancias institucionales; se genera un espacio horizontal donde la palabra de cada par tiene el mismo valor.</p>
+                                    </div>
+                                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                                        <h4 class="text-xs font-bold text-cafe uppercase mb-1">Seguridad, Confianza y Cercanía (Validación Emocional)</h4>
+                                        <p class="text-[11px] text-gray-600 text-justify">La bebida evoca el entorno seguro del hogar, la familia y la sobremesa. Desde las técnicas de comunicación no verbal y ambiental, esto disminuye los niveles de resistencia o prevención del participante. El espacio se percibe lejos de la rigidez de una auditoría, una supervisión o una clase magistral, transformándose en un escenario seguro, tranquilo y propicio para el disenso constructivo.</p>
+                                    </div>
+                                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">
+                                        <h4 class="text-xs font-bold text-cafe uppercase mb-1">Activación, Enfoque y Co-creación</h4>
+                                        <p class="text-[11px] text-gray-600 text-justify">A diferencia de dinámicas de relajación pasivas, el café' estimula y enfoca. Biológica y mentalmente, predispone a los instructores a la acción dialógica, al deseo de involucrarse, opinar y proponer de manera propositiva. Representa el equilibrio perfecto entre la serenidad de la escucha y la energía de la participación activa.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dimensiones Metodológicas -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-cafe border-b pb-2 mb-4"><i class="fa-solid fa-layer-group mr-2 text-sena-green"></i> Dimensiones de la Experiencia de Diálogo (El Café como Hilo Conductor)</h3>
+                    <p class="text-xs text-gray-500 mb-4">Para garantizar la efectividad de los espacios, la mística del café se incorpora formalmente a través de tres dimensiones metodológicas:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-4 bg-emerald-50/40 rounded-xl border border-emerald-100">
+                            <span class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center text-xs font-bold mb-2">1</span>
+                            <h4 class="text-xs font-bold text-emerald-900 uppercase">El Aroma de Bienvenida (Dimensión Sensorial)</h4>
+                            <p class="text-xs text-gray-600 mt-2 text-justify">La ambientación del espacio garantiza que el aroma a café reciba a los participantes. El olfato es el sentido con mayor anclaje en la memoria emocional; este estímulo sensorial predispone inmediatamente al sujeto hacia la comodidad y la apertura mental antes de pronunciar la primera palabra.</p>
+                        </div>
+                        <div class="p-4 bg-emerald-50/40 rounded-xl border border-emerald-100">
+                            <span class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center text-xs font-bold mb-2">2</span>
+                            <h4 class="text-xs font-bold text-emerald-900 uppercase">La "Preparación" como Metáfora Comunicativa (Dimensión Metodológica)</h4>
+                            <p class="text-xs text-gray-600 mt-2 text-justify">Así como el café de alta calidad requiere un tiempo justo, agua a la temperatura precisa y un filtrado cuidadoso, los procesos de transformación pedagógica y el diálogo entre pares no se pueden acelerar artificialmente. Simboliza el respeto por los ritmos del territorio, la paciencia institucional y la mística de la labor del instructor.</p>
+                        </div>
+                        <div class="p-4 bg-emerald-50/40 rounded-xl border border-emerald-100">
+                            <span class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center text-xs font-bold mb-2">3</span>
+                            <h4 class="text-xs font-bold text-emerald-900 uppercase">El Momento del Compartir (Dimensión Dialógica)</h4>
+                            <p class="text-xs text-gray-600 mt-2 text-justify">Se descartan por completo las estructuras rígidas de los talleres tradicionales. En su lugar, las jornadas se estructuran a través de "Mesas de Café" o "Tertulias Pedagógicas", donde el flujo de la comunicación es circular, orgánico y centrado en el saber del instructor como par experto.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: ESTRUCTURA DE MARCO LÓGICO -->
+            <section id="marco-logico" class="tab-content hidden space-y-6 animate-fade-in">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h2 class="text-xl font-bold text-cafe mb-4 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-bullseye text-sena-green mr-2"></i> Estructura y Alineación de Objetivos</span>
+                        <span class="text-xs bg-gray-100 font-mono text-gray-500 px-3 py-1 rounded-full">Nivel Estratégico</span>
+                    </h2>
+                    
+                    <!-- Objetivo General -->
+                    <div class="bg-gradient-to-r from-emerald-600 to-amber-900 text-white p-6 rounded-xl shadow-sm mb-6">
+                        <span class="text-xs font-bold uppercase tracking-wider bg-black/30 px-3 py-1 rounded-full">Objetivo General</span>
+                        <p class="text-base font-semibold mt-3 leading-relaxed">
+                            Promover la apropiación e integración de las acciones de la Escuela Nacional de Instructores en sus ejes de Acompañamiento, Investigación y Formación en las Regionales priorizadas, a través de la Estrategia "Entre Tintos y Experiencias", consolidando un espacio de diálogo horizontal y cercano que reconozca los saberes locales para el fortalecimiento de la calidad pedagógica.
+                        </p>
+                    </div>
+
+                    <!-- Objetivos Específicos Mapped as Matrix -->
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3">Objetivos Específicos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="border border-gray-200 p-4 rounded-xl hover:border-sena-green/40 transition-colors">
+                            <span class="text-xs font-bold text-sena-green uppercase block mb-2">Componente 1 / Fin 1</span>
+                            <p class="text-xs text-gray-700 font-medium">1. Gestionar de manera articulada las condiciones metodológicas, logísticas y de convocatoria con las Regionales priorizadas.</p>
+                        </div>
+                        <div class="border border-gray-200 p-4 rounded-xl hover:border-sena-green/40 transition-colors">
+                            <span class="text-xs font-bold text-sena-green uppercase block mb-2">Componente 2 / Fin 2</span>
+                            <p class="text-xs text-gray-700 font-medium">2. Desarrollar las jornadas de la estrategia "Entre Tintos y Experiencias", a través de metodologías dialógicas y de interacción horizontal que contemplen la sensibilización general, la escucha activa y el despliegue práctico de los ejes de Acompañamiento, Investigación y Formación en correspondencia con las realidades locales.</p>
+                        </div>
+                        <div class="border border-gray-200 p-4 rounded-xl hover:border-sena-green/40 transition-colors">
+                            <span class="text-xs font-bold text-sena-green uppercase block mb-2">Componente 3 / Fin 3</span>
+                            <p class="text-xs text-gray-700 font-medium">3. Valorar las necesidades, saberes e iniciativas identificados durante los encuentros, mediante herramientas de retroalimentación cualitativa y la consolidación de los productos construidos entre pares, para enriquecer de manera permanente y contextualizada las acciones futuras de la Escuela Nacional de Instructores.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Los Tres Ejes Técnicos Operativos -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-cafe border-b pb-2 mb-4"><i class="fa-solid fa-gears text-sena-green mr-2"></i> Ejes Estratégicos y Viabilidad Técnica</h3>
+                    <p class="text-xs text-gray-600 mb-4 text-justify">La estrategia se consolida como el vehículo idóneo para promover la pertinencia y la calidad, propiciando entornos que atraigan, motiven e incentiven a los instructores directamente en sus contextos mediante un intercambio horizontal, humano y fundamentado en el respeto por el quehacer pedagógico. Para hacer realidad esta cercanía, la Escuela dinamiza colectivamente tres grandes ejes estratégicos:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-sena-green text-white flex items-center justify-center text-xs"><i class="fa-solid fa-hands-holding-child"></i></div>
+                                <h4 class="text-xs font-bold uppercase text-gray-900">El Acompañamiento Pedagógico</h4>
+                            </div>
+                            <p class="text-[11px] text-gray-600 text-justify">Ejecutado como una estrategia de fortalecimiento situada en el territorio, fundamentada en técnicas dialogantes y de co-construcción entre pares, donde se diluyen las jerarquías en favor del saber compartido.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-sena-green text-white flex items-center justify-center text-xs"><i class="fa-solid fa-book-open"></i></div>
+                                <h4 class="text-xs font-bold uppercase text-gray-900">La Investigación Pedagógica</h4>
+                            </div>
+                            <p class="text-[11px] text-gray-600 text-justify">Orientada al reconocimiento de saberes y herramientas didácticas mediante la sistematización de experiencias, la escritura reflexiva y la divulgación de productos técnicos pedagógicos locales.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-lg bg-sena-green text-white flex items-center justify-center text-xs"><i class="fa-solid fa-chalkboard-user"></i></div>
+                                <h4 class="text-xs font-bold uppercase text-gray-900">La Formación</h4>
+                            </div>
+                            <p class="text-[11px] text-gray-600 text-justify">Enfocada en establecer lineamientos y acciones formativas que impulsen comunidades de aprendizaje activas para actualizar el Plan Institucional de Capacitación (PIC) de forma permanente y contextualizada.</p>
+                        </div>
+                    </div>
+                    <p class="text-xs italic text-gray-500 mt-4 text-center">De este modo, la estrategia actúa como un motor de equidad que construye puentes de conocimiento colectivo, reafirmando que la excelencia y calidad del SENA se vive y se fortalece con la misma fuerza en cada rincón del país.</p>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: DASHBOARD OPERATIVO -->
+            <section id="dashboard" class="tab-content hidden space-y-6 animate-fade-in">
+                <!-- Tarjetas de Indicadores Macro -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">Meta Alistamiento</span>
+                            <span class="text-2xl font-bold text-gray-900 block mt-1">100%</span>
+                            <span class="text-[10px] text-emerald-600 font-medium"><i class="fa-solid fa-check-double"></i> Regiones Concertadas</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-green-50 text-sena-green flex items-center justify-center text-lg"><i class="fa-solid fa-clipboard-check"></i></div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">Meta Ejecución</span>
+                            <span class="text-2xl font-bold text-gray-900 block mt-1">12</span>
+                            <span class="text-[10px] text-emerald-700 font-medium">Encuentros Realizados</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-green-50 text-emerald-800 flex items-center justify-center text-lg"><i class="fa-solid fa-map-pin"></i></div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">Meta Hojas de Ruta</span>
+                            <span class="text-2xl font-bold text-gray-900 block mt-1">100%</span>
+                            <span class="text-[10px] text-gray-500 font-medium">Instructores con Plan</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-brown-50 text-amber-900 flex items-center justify-center text-lg"><i class="fa-solid fa-route"></i></div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block">Talento Humano ENI</span>
+                            <span class="text-2xl font-bold text-gray-900 block mt-1">4</span>
+                            <span class="text-[10px] text-gray-500 font-medium">Formadores Desplegados</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-gray-50 text-gray-700 flex items-center justify-center text-lg"><i class="fa-solid fa-user-tie"></i></div>
+                    </div>
+                </div>
+
+                <!-- Detalles Metas por Componentes -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <span class="text-xs font-bold text-sena-green uppercase tracking-wider block mb-1">Componente 1</span>
+                        <h4 class="text-xs font-bold uppercase text-gray-900 mb-3">Alistamiento Operativo</h4>
+                        <div class="space-y-3 text-xs">
+                            <div>
+                                <span class="text-gray-500 block">Indicador:</span>
+                                <p class="text-gray-700 font-medium text-justify">Porcentaje de Regionales priorizadas con condiciones metodológicas, logísticas y de convocatoria concertadas y aprobadas de mutuo acuerdo antes del inicio de los encuentros.</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block">Meta:</span>
+                                <p class="text-gray-900 font-bold">100% de las Regionales priorizadas con alistamiento operativo consolidado y agenda de encuentros concertada.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <span class="text-xs font-bold text-sena-green uppercase tracking-wider block mb-1">Componente 2</span>
+                        <h4 class="text-xs font-bold uppercase text-gray-900 mb-3">Ejecución en Territorio</h4>
+                        <div class="space-y-3 text-xs">
+                            <div>
+                                <span class="text-gray-500 block">Indicador General:</span>
+                                <p class="text-gray-700 font-medium text-justify">Número de encuentros pedagógicos realizados en las regiones priorizadas (Número de instructores participantes).</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block">Meta General:</span>
+                                <p class="text-gray-900 font-bold">12 encuentros pedagógicos territoriales realizados.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <span class="text-xs font-bold text-sena-green uppercase tracking-wider block mb-1">Componente 3</span>
+                        <h4 class="text-xs font-bold uppercase text-gray-900 mb-3">Valoración y Gestión</h4>
+                        <div class="space-y-3 text-xs">
+                            <div>
+                                <span class="text-gray-500 block">Indicador:</span>
+                                <p class="text-gray-700 font-medium text-justify">Porcentaje de productos pedagógicos regionales estructurados e informes de necesidades territoriales consolidados y entregados.</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block">Meta:</span>
+                                <p class="text-gray-900 font-bold">100% de los Informes Técnicos de Sistematización y Diagnóstico Regional entregados, y un Banco de Experiencias y Productos Pedagógicos Territoriales completamente consolidado al cierre del ciclo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: DESPLIEGUE TERRITORIAL (MAPA DE PRESENCIA OFICIAL) -->
+            <section id="territorio" class="tab-content hidden space-y-6 animate-fade-in">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        
+                        <!-- Panel Izquierdo: Visualización de Mapa PNG Corporativo -->
+                        <div class="w-full lg:w-1/2 flex flex-col items-center">
+                            <h3 class="text-base font-bold text-cafe mb-4 text-center w-full"><i class="fa-solid fa-map-location-dot text-sena-green mr-2"></i> Mapa Oficial de Presencia Regional SENA</h3>
+                            
+                            <!-- Contenedor del Mapa en Imagen -->
+                            <div class="w-full max-w-[420px] rounded-2xl border border-gray-200 overflow-hidden shadow-md bg-white p-1">
+                                <img src="Regionales Entre tintos.png" alt="Regionales Entre tintos Mapa Oficial" class="w-full h-auto object-contain">
+                            </div>
+                            <p class="text-[10px] text-gray-400 mt-3 italic text-center">Presencia del SENA en 1.102 municipios de Colombia y 118 centros de formación.</p>
+                        </div>
+
+                        <!-- Panel Derecho: Detalle Territorial e Índice Interactivo -->
+                        <div class="w-full lg:w-1/2 flex flex-col justify-between">
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 h-full flex flex-col justify-between">
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-2" id="region-title">Focalización y Apertura Inicial</h4>
+                                    <div class="text-xs text-gray-700 space-y-3 leading-relaxed text-justify" id="region-desc">
+                                        <p>Si bien la estrategia proyecta un alcance nacional, su apertura e implementación inicial comienzan con un foco prioritario en las Regionales de Chocó, Cesar, La Guajira, Arauca, Casanare, Caquetá, Putumayo, San Andrés, Guaviare, Guainía, Vaupés y Vichada.</p>
+                                        <p class="bg-emerald-50 p-4 rounded-lg border-l-4 border-emerald-700 text-emerald-900">Esta focalización atiende proactivamente aquellos contextos territoriales donde la permanencia y la labor del instructor exigen un especial esfuerzo debido a condiciones geográficas particulares, retos de conectividad y dinámicas de orden público, transformando la presencia institucional en un acto de escucha activa y fortalecimiento del talento humano.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Lista de control interactiva de Regiones -->
+                                <div class="mt-6 border-t border-gray-200 pt-4">
+                                    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-3">Seleccione un Territorio Priorizado para ver el Contexto:</span>
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="region-list">
+                                        <!-- Generado dinámicamente -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 5: MATRIZ DE COMPONENTES COMPLETA -->
+            <section id="componentes" class="tab-content hidden space-y-8 animate-fade-in">
+                
+                <!-- COMPONENTE 1 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="bg-cafe-dark p-4 text-white flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wider bg-sena-green px-2.5 py-1 rounded">Componente 1</span>
+                        <span class="text-xs font-medium text-gray-300">Alistamiento Operativo y Articulación Territorial</span>
+                    </div>
+                    <div class="p-6 space-y-4 text-xs">
+                        <div><span class="font-bold text-gray-500 uppercase block">Objetivo:</span> <p class="text-gray-900 text-sm font-medium">Gestionar de manera articulada las condiciones metodológicas, logísticas y de convocatoria con las Regionales priorizadas.</p></div>
+                        <div class="border-t pt-3">
+                            <span class="font-bold text-gray-500 uppercase block mb-1">Acciones:</span>
+                            <ul class="list-disc pl-5 space-y-1.5 text-gray-700 text-justify">
+                                <li>Establecer comunicación oficial y diálogos de concertación con los Directores Regionales y Subdirectores de Centro para sintonizar las agendas pedagógicas con las dinámicas de cada territorio.</li>
+                                <li>Planear de forma concertada la logística de las "Mesas de Café" y "Tertulias Pedagógicas" (espacios físicos), así como el suministro de los recursos técnicos y los materiales dialécticos requeridos en la región.</li>
+                                <li>Coordinar la convocatoria interna orientada a propiciar un encuentro genuino entre los instructores de los Centros de Formación priorizados.</li>
+                            </ul>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t pt-3 bg-gray-50 p-4 rounded-xl">
+                            <div><span class="font-bold text-gray-400 uppercase block">Producto:</span><p class="font-medium text-gray-800">Plan operativo territorial concertado en co-diseño con las regiones y registro de instructores vinculados a la estrategia.</p></div>
+                            <div><span class="font-bold text-gray-400 uppercase block">Responsable:</span><p class="font-medium text-gray-800">Equipo de Gestión Logística y Metodológica / Coordinación de la Escuela Nacional de Instructores Rodolfo Martínez Tono.</p></div>
+                            <div><span class="font-bold text-gray-400 uppercase block">Fuentes de Verificación:</span><p class="font-medium text-gray-800">Circulares u oficios institucionales de convocatoria, actas de concierto/compromiso territorial y agendas metodológicas avaladas por las partes.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPONENTE 2 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="bg-cafe-dark p-4 text-white flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wider bg-sena-green px-2.5 py-1 rounded">Componente 2</span>
+                        <span class="text-xs font-medium text-gray-300">Ejecución en Territorio</span>
+                    </div>
+                    <div class="p-6 space-y-4 text-xs">
+                        <div><span class="font-bold text-gray-500 uppercase block">Objetivo:</span> <p class="text-gray-900 text-sm font-medium">Desarrollar los encuentros de la Estrategia "Entre Tintos y Experiencias", a través de metodologías dialógicas y de interacción horizontal que contemplen la sensibilización general, la escucha activa, el despliegue práctico de los ejes de Acompañamiento, Investigación y Formación, y la documentación de los saberes en correspondencia con las realidades locales.</p></div>
+                        
+                        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-200 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div><span class="font-bold text-emerald-900 uppercase block">Responsable Específico:</span><p class="text-gray-700">Equipo Pedagógico de la Escuela Nacional de Instructores Rodolfo Martínez Tono (4 Formadores/Facilitadores, con una asignación de 3 Regionales priorizadas para cada uno).</p></div>
+                            <div><span class="font-bold text-emerald-900 uppercase block">Fuentes de Verificación Generales:</span><p class="text-gray-700">Listas de asistencia (digital o física), memorias fotográficas de las tertulias y registros de productos construidos.</p></div>
+                        </div>
+
+                        <!-- Desglose por Días y Momentos -->
+                        <div class="border-t pt-4">
+                            <h4 class="text-sm font-bold text-cafe mb-3">Estructura Cronológica del Encuentro Territorial (5 Días)</h4>
+                            
+                            <div class="space-y-4">
+                                <!-- Día 1 -->
+                                <div class="p-4 border border-gray-100 rounded-xl bg-gray-50">
+                                    <div class="flex items-center justify-between border-b pb-1.5 mb-2">
+                                        <span class="font-bold text-sena-green uppercase">Momento "Tomémonos un tinto" (Día 1) - Sensibilización y Autodiagnóstico</span>
+                                        <span class="bg-gray-200 px-2 py-0.5 rounded text-[10px] font-mono text-gray-600">Acción General 1</span>
+                                    </div>
+                                    <p class="text-[11px] text-gray-500 mb-2 italic">Desarrollar el encuentro de Apertura, Conexión y Autodiagnóstico Colectivo con los instructores mediante el diálogo empático y la valoración sensorial del café.</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                                        <div>
+                                            <span class="font-bold text-gray-400 uppercase block text-[10px]">Acciones Específicas:</span>
+                                            <ul class="list-disc pl-4 space-y-1 text-gray-700">
+                                                <li>Realizar la dinámica de bienvenida y acuerdos de participación horizontal para validar las voces y saberes locales.</li>
+                                                <li>Presentar de forma cercana la oferta institucional de la Escuela Nacional de Instructores (ENI).</li>
+                                                <li>Dinamizar tertulias fluidas alrededor de una taza de café para identificar de manera conjunta las necesidades más sentidas y retos particulares de los Centros de Formación locales.</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <span class="font-bold text-gray-400 uppercase block text-[10px]">Producto Específico:</span>
+                                            <p class="font-medium text-gray-800">Informe de necesidades territoriales consolidado y avalado de mutuo acuerdo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Días 2, 3 y 4 -->
+                                <div class="p-4 border border-gray-100 rounded-xl bg-gray-50">
+                                    <div class="flex items-center justify-between border-b pb-1.5 mb-2">
+                                        <span class="font-bold text-sena-green uppercase">Momento "Co-creación entre Pares" (Días 2, 3 y 4) - Despliegue de los Ejes Técnicos</span>
+                                        <span class="bg-gray-200 px-2 py-0.5 rounded text-[10px] font-mono text-gray-600">Acción General 2</span>
+                                    </div>
+                                    <p class="text-[11px] text-gray-500 mb-3 italic">Desarrollar las mesas de trabajo colaborativas, documentación y co-creación pedagógica aplicadas a los ejes de Acompañamiento, Investigación y Formación.</p>
+                                    
+                                    <div class="space-y-4 pl-2 border-l-2 border-gray-200">
+                                        <!-- Eje Acompañamiento -->
+                                        <div>
+                                            <h5 class="font-bold text-cafe uppercase text-[11px]">Eje de Acompañamiento Pedagógico (Día 2):</h5>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1 text-[11px]">
+                                                <div>
+                                                    <span class="text-gray-400 font-semibold block">Acciones Específicas:</span>
+                                                    <ul class="list-disc pl-4 text-gray-700">
+                                                        <li>Socializar, mediante una mesa de diálogo cercana, los lineamientos vigentes y la ruta metodológica de la estrategia "Aprendiendo Juntos".</li>
+                                                        <li>Desarrollar talleres aplicados y simulaciones en contexto sobre herramientas de observación reflexiva, comunicación asertiva y retroalimentación entre pares.</li>
+                                                        <li>Establecer planes conjuntos de mejora pedagógica adaptados a la realidad de cada Centro de Formación.</li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <span class="text-gray-400 font-semibold block">Producto Específico:</span>
+                                                    <p class="text-gray-800 font-medium">Planes preliminares de mejora pedagógica concertada y acuerdos de autonomía en el aula.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Eje Investigación -->
+                                        <div class="pt-2 border-t border-dashed border-gray-200">
+                                            <h5 class="font-bold text-cafe uppercase text-[11px]">Eje de Investigación Pedagógica (Día 3):</h5>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1 text-[11px]">
+                                                <div>
+                                                    <span class="text-gray-400 font-semibold block">Acciones Específicas:</span>
+                                                    <ul class="list-disc pl-4 text-gray-700">
+                                                        <li>Orientar talleres prácticos de formulación y definición del "qué y el cómo" de la investigación situada en las regiones.</li>
+                                                        <li>Mapear y valorar los saberes didácticos y las prácticas formativas locales a través de enfoques cualitativos y participativas.</li>
+                                                        <li>Implementar técnicas ágiles de escritura reflexiva para documentar las iniciativas y transformarlas en relatos pedagógicos estructurados.</li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <span class="text-gray-400 font-semibold block">Producto Específico:</span>
+                                                    <p class="text-gray-800 font-medium">Banco de experiencias significativas locales documentadas y compromisos de sistematización.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Eje Formación -->
+                                        <div class="pt-2 border-t border-dashed border-gray-200">
+                                            <h5 class="font-bold text-cafe uppercase text-[11px]">Eje de Formación (Día 4):</h5>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1 text-[11px]">
+                                                <div>
+                                                    <span class="text-gray-400 font-semibold block">Acciones Específicas:</span>
+                                                    <ul class="list-disc pl-4 text-gray-700">
+                                                        <li>Socializar las orientaciones del Plan Institucional de Capacitación (PIC) y articular acciones con las Redes de Conocimiento para robustecer los perfiles de los instructores.</li>
+                                                        <li>Desarrollar laboratorios didácticos interactivos para la apropiación de herramientas metodológicas de la Formación Profesional Integral (FPI), adaptadas a los retos logísticos y de conectividad de la zona.</li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <span class="text-gray-400 font-semibold block">Producto Específico:</span>
+                                                    <p class="text-gray-800 font-medium">Propuesta participativa de actualización de necesidades del PIC para el territorio.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Día 5 -->
+                                <div class="p-4 border border-gray-100 rounded-xl bg-gray-50">
+                                    <div class="flex items-center justify-between border-b pb-1.5 mb-2">
+                                        <span class="font-bold text-sena-green uppercase">Momento "Sabores y Saberes del Territorio" (Día 5) - Cierre, Degustación y Valoración Cualitativa</span>
+                                        <span class="bg-gray-200 px-2 py-0.5 rounded text-[10px] font-mono text-gray-600">Acción General 3</span>
+                                    </div>
+                                    <p class="text-[11px] text-gray-500 mb-2 italic">Realizar el encuentro de Cierre, Sistematización y Valoración Cualitativa del impacto de la estrategia en el territorio. Desarrollar la jornada de cierre y valoración cualitativa de la estrategia a través de la degustación reflexiva de las experiencias e identidades locales, promoviendo el reconocimiento mutuo de los sabores y saberes construidos y la proyección de un nuevo comienzo pedagógico en cada región.</p>
+                                    
+                                    <div class="space-y-3 mt-3 pl-2 text-justify">
+                                        <div>
+                                            <span class="font-bold text-cafe uppercase block text-[10px]">Dinámica del Espacio:</span>
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1">
+                                                <div class="bg-white p-3 rounded-lg border border-gray-200">
+                                                    <span class="font-bold text-emerald-800 block text-[10px]">Jornada de la Mañana: La Degustación Colectiva (Cosecha de Saberes)</span>
+                                                    <p class="text-[11px] text-gray-700 mt-1">Compartir las "notas de sabor" y matices más significativos construidos en los ejes de Acompañamiento, Investigación y Formación mediante una plenaria de comunidades de aprendizaje. Implementar la Feria de Saberes (Galería Pedagógica Territorial) como una mesa de catación horizontal donde se aprecian y valoran las propuestas pedagógicas y la riqueza cultural de los pares. Realizar retroalimentación constructiva y escrita entre pares para validar, enriquecer y celebrar las experiencias expuestas en la galería, integrando la mística del territorio.</p>
+                                                </div>
+                                                <div class="bg-white p-3 rounded-lg border border-gray-200">
+                                                    <span class="font-bold text-emerald-800 block text-[10px]">Jornada de la Tarde: Del Territorio al Sistema (Proyección Estratégica)</span>
+                                                    <p class="text-[11px] text-gray-700 mt-1">Diseñar la "Hoja de Ruta Pedagógica Territorial" como el plan de acción individual que guiará la transferencia de saberes y el nuevo despertar pedagógico en cada Centro de Formación. Facilitar un diálogo de cierre horizontal con el equipo de la Escuela para escuchar de forma activa las percepciones, necesidades históricas y propuestas de mejora surgidas desde la realidad regional.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="bg-white p-3 rounded-lg border border-gray-200 mt-2">
+                                                <span class="font-bold text-emerald-800 block text-[10px]">Cierre de la Jornada: Un Tinto para el Camino (El Inicio de la Siembra)</span>
+                                                <p class="text-[11px] text-gray-700 mt-1">Vivir el ritual del tinto para el camino, compartiendo una taza de café que simboliza la energía, la mística y los saberes que cada par se lleva a su territorio; transformando el cierre en el impulso inicial para sembrar la transformación pedagógica en las aulas. Consolidar la memoria audiovisual y fotográfica colectiva del encuentro regional como testimonio del nuevo comienzo de la comunidad de aprendizaje.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t pt-2">
+                                            <div>
+                                                <span class="font-bold text-gray-400 uppercase block text-[10px]">Resultados Obtenidos Día 5:</span>
+                                                <ul class="list-disc pl-4 text-gray-700 text-[11px] space-y-0.5">
+                                                    <li>Interiorización de las lecciones aprendidas y los saberes compartidos durante la semana mediante procesos de co-evaluación participativa, dialógica y contextualizada.</li>
+                                                    <li>Consolidación del tejido de compañerismo y del compromiso ético con la transformación pedagógica institucional, honrando la identidad y los saberes locales.</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <span class="font-bold text-gray-400 uppercase block text-[10px]">Productos del Momento:</span>
+                                                <p class="text-gray-800 font-medium text-[11px]">Hojas de Ruta Pedagógicas Territoriales formalizadas (Planes de acción individuales de transferencia).<br>Acta de Acuerdos y Compromisos Territoriales suscrita de mutuo acuerdo.<br>Banco de Recomendaciones locales compilado y registro de memoria audiovisual de los sabores y saberes del territorio.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPONENTE 3 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="bg-cafe-dark p-4 text-white flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wider bg-sena-green px-2.5 py-1 rounded">Componente 3</span>
+                        <span class="text-xs font-medium text-gray-300">Valoración, Sistematización y Gestión de Saberes</span>
+                    </div>
+                    <div class="p-6 space-y-4 text-xs text-justify">
+                        <div>
+                            <span class="font-bold text-gray-500 uppercase block">Enfoque Estratégico (Del Territorio al Sistema):</span> 
+                            <p class="text-gray-700">Este componente representa la fase de proyección, transferencia y acción concreta de la estrategia. Consiste en transformar las experiencias y saberes compartidos alrededor del café durante los encuentros territoriales en compromisos verificables y productos técnico-pedagógicos tangibles. De este modo, la voz y la realidad de cada región se integran orgánicamente al sistema institucional para retroalimentar el diseño de las futuras acciones de la Escuela Nacional de Instructores Rodolfo Martínez Tono.</p>
+                        </div>
+                        <div class="border-t pt-3">
+                            <span class="font-bold text-gray-500 uppercase block">Objetivo:</span> 
+                            <p class="text-gray-900 font-medium">Valorar las necesidades, saberes e iniciativas identificados durante los encuentros territoriales, mediante herramientas de retroalimentación cualitativa y la consolidación de los productos construidos entre pares, para enriquecer de manera permanente y contextualizada el Plan Institucional de Capacitación (PIC) y las acciones futuras de la Escuela.</p>
+                        </div>
+                        <div class="border-t pt-3">
+                            <span class="font-bold text-gray-500 uppercase block mb-1">Acciones:</span>
+                            <ul class="list-disc pl-5 space-y-1.5 text-gray-700">
+                                <li>Implementar herramientas dialógicas de valoración cualitativa, co-evaluación y transferencia de saberes con los instructores participantes, registrando las percepciones del encuentro desde la empatía y el mutuo reconocimiento.</li>
+                                <li>Consolidar y clasificar los productos pedagógicos tangibles (Hojas de Ruta Pedagógicas Territoriales, bancos de experiencias significativas y propuestas de actualización del PIC) generados colaborativamente por las comunidades de aprendizaje en las regiones.</li>
+                                <li>Sistematizar las memorias de los diálogos de cierre, las necesidades formativas locales y las particularidades geográficas identificadas en los territorios para la estructuración de los informes técnicos finales de recomendación.</li>
+                            </ul>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t pt-3 bg-gray-50 p-4 rounded-xl">
+                            <div>
+                                <span class="font-bold text-gray-400 uppercase block">Productos Finales:</span>
+                                <p class="font-medium text-gray-800">Banco de Experiencias y Productos Pedagógicos Territoriales estructurado e indexado en formato digital.<br>Informe Técnico de Sistematización Cualitativa y Diagnóstico Regional (con las notas de sabores y saberes de cada territorio).<br>Repositorio institucional de Hojas de Ruta Pedagógicas Territoriales formalizadas por los instructores.</p>
+                            </div>
+                            <div><span class="font-bold text-gray-400 uppercase block">Responsable del Enfoque:</span><p class="font-medium text-gray-800">Equipo de Gestión del Conocimiento, Sistematización y Pedagogía / Coordinación de la Escuela Nacional de Instructores Rodolfo Martínez Tono.</p></div>
+                            <div><span class="font-bold text-gray-400 uppercase block">Fuentes de Verificación:</span><p class="font-medium text-gray-800">Informes técnicos de sistematización cualitativa por territorio, actas de acuerdos institucionales suscritas con las regiones, repositorio digital con las Hojas de Ruta indexadas y archivo audiovisual de la memoria colectiva de los encuentros.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- PIE DE PÁGINA CON CRÉDITOS Y FORMADORES AUTORES -->
+        <footer class="bg-cafe-dark text-white border-t-4 border-sena-green mt-12">
+            <div class="max-w-7xl mx-auto px-6 py-6 text-xs space-y-4">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-6 border-b border-white/10 pb-4">
+                    <div class="text-left">
+                        <span class="text-sena-green font-bold uppercase tracking-wider block mb-1">Formadores de Instructores:</span>
+                        <p class="text-gray-200 font-semibold text-sm">Andrés Ricardo Fuentes Díaz</p>
+                        <p class="text-gray-200 font-semibold text-sm mt-0.5">Alejandro Gómez Pérez</p>
+                    </div>
+                    <div class="text-left md:text-right">
+                        <span class="text-sena-green font-bold uppercase tracking-wider block mb-1">Profesionales ENI:</span>
+                        <p class="text-gray-200 font-semibold text-sm">Alexander Soto Claros</p>
+                        <p class="text-gray-200 font-semibold text-sm mt-0.5">Tarik Alexander Luna Villarreal</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-400 gap-2">
+                    <p>&copy; 2026 Servicio Nacional de Aprendizaje (SENA). Todos los derechos reservados bajo la mística del territorio colombiano.</p>
+                    <p class="font-mono">Fidelidad Textual: Integra e Inalterada.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- SCRIPT DE INTERACCIÓN Y NAVEGACIÓN -->
+    <script>
+        // Data Estructural Inalterada de Regiones para el Panel del Mapa
+        const regionesData = {
+            'Arauca': 'Focalización proactiva: Contexto territorial priorizado del Componente 2. La permanencia y labor del instructor exige un especial esfuerzo debido a condiciones geográficas particulares, retos de conectividad y dinámicas de orden público, transformando la presencia en un acto de escucha activa.',
+            'Caquetá': 'Focalización proactiva: Región del Componente 2 con priorización metodológica y logística adaptada a sus condiciones de conectividad y realidades de la Colombia profunda para laboratorios didácticos y actualización del PIC.',
+            'Casanare': 'Focalización proactiva: Espacio donde las Mesas de Café y Tertulias Pedagógicas configuran el dispositivo de comunicación empática directa con los instructores adscritos a sus Centros de Formación.',
+            'Cesar': 'Focalización proactiva: Integrada en la apertura inicial prioritaria para deconstruir la transferencia vertical asimétrica y promover acuerdos de autonomía en el aula mediante el eje de Acompañamiento.',
+            'Chocó': 'Focalización proactiva: Región priorizada de inicio donde la mística de la labor exige especial atención. Espacio para mapear saberes didácticos locales y levantar informes de necesidades territoriales concertados.',
+            'Guainía': 'Focalización proactiva: Contexto de la Colombia profunda con retos particulares de conectividad y geografía, donde el tinto actúa como un nivelador relacional reduciendo asimetrías con los equipos de Bogotá.',
+            'Guaviare': 'Focalización proactiva: Priorización territorial para la ejecución de encuentros pedagógicos, mesas de catación horizontal, ferias de saberes y formalización de Hojas de Ruta Pedagógicas individuales.',
+            'La Guajira': 'Focalización proactiva: Territorio priorizado inicial. Zona donde se implementarán de forma concertada las técnicas ágiles de escritura reflexiva para transformar iniciativas en relatos pedagógicos estructurados.',
+            'Putumayo': 'Focalización proactiva: Región priorizada bajo el motor de equidad de la ENI, orientada al desarrollo del encuentro de Apertura, Conexión y Autodiagnóstico Colectivo durante el Momento 1 de la estrategia.',
+            'San Andrés': 'Focalización proactiva: Contexto insular priorizado donde se coordinará la convocatoria interna para propiciar encuentros genuinos y circularidad en las Tertulias Pedagógicas entre pares expertos.',
+            'Vaupés': 'Focalización proactiva: Territorio prioritario que integra la mística institucional para la valoración sensorial del café y la co-evaluación participativa y contextualizada de la Formación Profesional Integral.',
+            'Vichada': 'Focalización proactiva: Región priorizada donde se suscribirá el Acta de Acuerdos Territoriales mutuos y se generarán los documentos de recomendaciones locales al cierre del ciclo del Componente 2.'
+        };
+
+        // Renderizar la lista de botones rápidos de la pestaña de Territorio
+        const containerLista = document.getElementById('region-list');
+        Object.keys(regionesData).forEach((reg, index) => {
+            const btn = document.createElement('button');
+            btn.className = "region-item-btn text-[11px] bg-white border border-gray-200 text-left px-2.5 py-1.5 rounded-lg hover:border-sena-green transition-colors font-medium text-gray-700 block truncate w-full";
+            btn.innerHTML = `<i class="fa-solid fa-mug-left text-emerald-700 mr-1.5"></i> ${reg}`;
+            btn.onclick = () => selectRegion(reg, btn);
+            // Activar la primera región por defecto
+            if (index === 0) {
+                setTimeout(() => btn.click(), 100);
+            }
+            containerLista.appendChild(btn);
+        });
+
+        // Cambio de Pestañas
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.remove('hidden');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Interacción del Listado Regional
+        function selectRegion(regionName, clickedButton) {
+            // Remover la clase activa de todos los botones de la lista regional
+            document.querySelectorAll('.region-item-btn').forEach(btn => btn.classList.remove('active-region'));
+            
+            // Agregar el estado activo al botón seleccionado
+            if (clickedButton) {
+                clickedButton.classList.add('active-region');
+            }
+
+            // Actualizar contenido lateral en correspondencia con el territorio
+            document.getElementById('region-title').innerText = "Contexto Territorial: " + regionName;
+            document.getElementById('region-desc').innerHTML = `
+                <p class="font-semibold text-sena-green text-[11px] uppercase tracking-wider mb-2">Focalización Activa Regional</p>
+                <p class="text-xs text-gray-800 text-justify bg-white p-3 rounded-xl border border-gray-200 shadow-inner">${regionesData[regionName]}</p>
+                <p class="text-[11px] text-gray-500 mt-3 text-justify">En este territorio se asegura el cumplimiento del 100% de los instructores con su Hoja de Ruta Pedagógica Territorial formalizada al cierre de la semana de co-creación.</p>
+            `;
+        }
+    </script>
+</body>
+</html>
