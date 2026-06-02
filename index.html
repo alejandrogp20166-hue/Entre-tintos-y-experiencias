@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrategia: "Entre Tintos y Experiencias" - Informe Executive</title>
+    <title>Estrategia: "Entre Tintos y Experiencias" - Informe Ejecutivo</title>
     
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -80,24 +80,24 @@
         </header>
 
         <div class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
-            <div class="max-w-7xl mx-auto px-6 overflow-x-auto flex space-x-2 py-3 scrollbar-none">
-                <button onclick="switchTab('justificacion')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2 active">
-                    <i class="fa-solid fa-mug-hot"></i> 1. Justificación y Fundamentos
+            <div class="max-w-7xl mx-auto px-4 py-3 grid grid-cols-2 md:grid-cols-6 gap-2 w-full">
+                <button onclick="switchTab('justificacion')" class="tab-btn px-2 py-2.5 rounded-lg text-xs lg:text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center justify-center gap-2 active text-center cursor-pointer">
+                    <i class="fa-solid fa-mug-hot shrink-0"></i> <span class="truncate">1. Justificación</span>
                 </button>
-                <button onclick="switchTab('marco-logico')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2">
-                    <i class="fa-solid fa-sitemap"></i> 2. Estructura de Marco Lógico
+                <button onclick="switchTab('marco-logico')" class="tab-btn px-2 py-2.5 rounded-lg text-xs lg:text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center justify-center gap-2 text-center cursor-pointer">
+                    <i class="fa-solid fa-sitemap shrink-0"></i> <span class="truncate">2. Marco Lógico</span>
                 </button>
-                <button onclick="switchTab('dashboard')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2">
-                    <i class="fa-solid fa-chart-pie"></i> 3. Tablero Operativo
+                <button onclick="switchTab('dashboard')" class="tab-btn px-2 py-2.5 rounded-lg text-xs lg:text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center justify-center gap-2 text-center cursor-pointer">
+                    <i class="fa-solid fa-chart-pie shrink-0"></i> <span class="truncate">3. Tablero Ops</span>
                 </button>
-                <button onclick="switchTab('territorio')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2">
-                    <i class="fa-solid fa-map-location-dot"></i> 4. Despliegue Territorial
+                <button onclick="switchTab('territorio')" class="tab-btn px-2 py-2.5 rounded-lg text-xs lg:text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center justify-center gap-2 text-center cursor-pointer">
+                    <i class="fa-solid fa-map-location-dot shrink-0"></i> <span class="truncate">4. Territorios</span>
                 </button>
-                <button onclick="switchTab('componentes')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2">
-                    <i class="fa-solid fa-list-check"></i> 5. Matriz de Componentes
+                <button onclick="switchTab('componentes')" class="tab-btn px-2 py-2.5 rounded-lg text-xs lg:text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center justify-center gap-2 text-center cursor-pointer">
+                    <i class="fa-solid fa-list-check shrink-0"></i> <span class="truncate">5. Componentes</span>
                 </button>
-                <button onclick="switchTab('descargar-informe')" class="tab-btn whitespace-nowrap px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-600 hover:bg-gray-50 border border-gray-200 transition-all flex items-center gap-2 bg-gray-50 text-emerald-800">
-                    <i class="fa-solid fa-cloud-arrow-down"></i> Descargar Informe Completo
+                <button onclick="switchTab('descargar-informe')" class="tab-btn px-2 py-2.5 rounded-lg text-xs lg:text-sm font-semibold text-emerald-800 hover:bg-emerald-50 bg-emerald-50/50 border border-emerald-200 transition-all flex items-center justify-center gap-2 text-center cursor-pointer">
+                    <i class="fa-solid fa-cloud-arrow-down shrink-0"></i> <span class="truncate">6. Descargar</span>
                 </button>
             </div>
         </div>
@@ -123,7 +123,7 @@
                                 <i class="fa-solid fa-history text-sena-green"></i> Origen Cultural del Tinto
                             </h3>
                             <p class="text-gray-700 text-sm leading-relaxed text-justify">
-                                Históricamente, el grano de café -cuya expansion desde el siglo XVIII lo consolidó como símbolo inequívoco de hospitalidad- propició una práctica cultural única en las clases populares: al observar cómo el filtrado teñía el agua de un tono oscuro y traslúcido similar al vino tinto (un bien entonces importado y costoso), acuñaron metafóricamente el término "un tinto" para describir el compartir cotidiano de esta bebida impregnada del sabor de nuestra tierra.
+                                Históricamente, el grano de café -cuya expansión desde el siglo XVIII lo consolidó como símbolo inequívoco de hospitalidad- propició una práctica cultural única en las clases populares: al observar cómo el filtrado teñía el agua de un tono oscuro y traslúcido similar al vino tinto (un bien entonces importado y costoso), acuñaron metafóricamente el término "un tinto" para describir el compartir cotidianamente de esta bebida impregnada del sabor de nuestra tierra.
                             </p>
                             <div class="mt-4 p-4 bg-cafe-light/40 rounded-xl border-l-4 border-amber-900 text-xs text-cafe italic text-justify leading-relaxed">
                                 Al adoptar este legado, la Escuela Nacional de Instructores (ENI) configura un dispositivo de comunicación empática y diálogo genuino. Una taza de café invita a pausar el día para conversar sin prisa, escuchar las realidades locales y construir colectivamente la excelencia y calidad en la formación profesional integral desde el reconocimiento mutuo.
@@ -190,7 +190,7 @@
                         <div class="p-4 bg-emerald-50/30 rounded-xl border border-emerald-100 shadow-xs">
                             <span class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center text-xs font-bold mb-2 shadow-xs">1</span>
                             <h4 class="text-xs font-bold text-emerald-900 uppercase tracking-wider">El Aroma de Bienvenida (Dimensión Sensorial)</h4>
-                            <p class="text-xs text-gray-600 mt-2 text-justify leading-relaxed">La ambientación del espacio garantiza que el aroma a café reciba a los participantes. El olfato es el sentido con mayor anclaje en la memoria emocional; este estímulo sensorial predispone inmediatamente al sujeto hacia la comodidad y la apertura mental antes de pronunciar la primera palabra.</p>
+                            <p class="text-xs text-gray-600 mt-2 text-justify leading-relaxed">La ambientación del espacio garantiza que el aroma a café reciba a los participantes. El olfato es el sentido con mayor anclaje en la memoria emotional; este estímulo sensorial predispone inmediatamente al sujeto hacia la comodidad y la apertura mental antes de pronunciar la primera palabra.</p>
                         </div>
                         <div class="p-4 bg-emerald-50/30 rounded-xl border border-emerald-100 shadow-xs">
                             <span class="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center text-xs font-bold mb-2 shadow-xs">2</span>
@@ -404,7 +404,6 @@
             </section>
 
             <section id="componentes" class="tab-content space-y-8 animate-fade-in hidden">
-                
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                     <div class="bg-cafe-dark p-4 text-white flex justify-between items-center border-b-2 border-sena-green">
                         <span class="text-xs font-bold uppercase tracking-wider bg-sena-green px-2.5 py-1 rounded shadow-xs">Objetivo Específico 1</span>
@@ -447,7 +446,7 @@
                     </div>
                     <div class="p-6 space-y-4 text-xs">
                         <div>
-                            <span class="font-bold text-gray-400 uppercase text-[10px] block mb-0.5">Objective:</span> 
+                            <span class="font-bold text-gray-400 uppercase text-[10px] block mb-0.5">Objetivo:</span> 
                             <p class="text-gray-900 text-sm font-semibold text-justify leading-relaxed">Desarrollar los encuentros de la Estrategia "Entre Tintos y Experiencias", a través de metodologías dialógicas y de interacción horizontal que contemplen la sensibilización general, la escucha activa, el despliegue práctico de los ejes de Acompañamiento, Investigación y Formación, y la documentación de los saberes en correspondencia con las realidades locales.</p>
                         </div>
                         
@@ -676,7 +675,7 @@
     </div>
 
     <script>
-        // 1. Matriz Única de Datos del Equipo Técnico (Extraída fielmente de tu Tabla Excel)
+        // 1. Matriz Única de Datos del Equipo Técnico (Fiel a la tabla Excel provista)
         const regionesData = {
             "Arauca": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
             "Casanare": { eni: "Tarik Alexander Luna Villarreal", formador: "Alejandro Gómez Pérez", barista: "Dora Ligia Castaño" },
@@ -692,7 +691,7 @@
             "Vichada": { eni: "Por Asignar", formador: "Por Asignar", barista: "Por Asignar" }
         };
 
-        // 2. Renderizado Inicial de la Botonera Interactiva
+        // 2. Inicialización y Renderizado Autónomo al Cargar el DOM
         document.addEventListener("DOMContentLoaded", () => {
             const containerLista = document.getElementById('region-list');
             if (containerLista) {
@@ -706,7 +705,7 @@
                     
                     btn.onclick = (event) => selectRegion(reg, event.currentTarget);
                     
-                    // Cargar por defecto el primer elemento (Arauca)
+                    // Pre-selecciona la primera región (Arauca) de forma limpia
                     if (index === 0) {
                         setTimeout(() => selectRegion(reg, btn), 100);
                     }
@@ -714,7 +713,7 @@
                 });
             }
 
-            // Fallback visual en caso de ausencia física de la imagen del mapa
+            // Gestión Adaptativa de Fallback para el Asset de Cartografía
             const fallbackImg = document.querySelector('.onerror-fallback');
             if (fallbackImg) {
                 fallbackImg.onerror = function() {
@@ -726,7 +725,7 @@
             }
         });
 
-        // 3. Motor de Cambio de Pestañas
+        // 3. Controlador de Conmutación de Pestañas (Tab System)
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -741,7 +740,7 @@
             }
         }
 
-        // 4. Actualización del Panel de Datos de la Región Seleccionada
+        // 4. Motor de Inyección de Ficha Técnica Regional
         function selectRegion(regionName, clickedButton) {
             document.querySelectorAll('.region-item-btn').forEach(btn => btn.classList.remove('active-region'));
             
