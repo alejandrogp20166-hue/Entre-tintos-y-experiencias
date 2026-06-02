@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrategia: "Entre Tintos y Experiencias" - Informe Ejecutivo</title>
+    <title>Estrategia: "Entre Tintos y Experiencias" - Informe Executive</title>
     
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -123,7 +123,7 @@
                                 <i class="fa-solid fa-history text-sena-green"></i> Origen Cultural del Tinto
                             </h3>
                             <p class="text-gray-700 text-sm leading-relaxed text-justify">
-                                Históricamente, el grano de café -cuya expansión desde el siglo XVIII lo consolidó como símbolo inequívoco de hospitalidad- propició una práctica cultural única en las clases populares: al observar cómo el filtrado teñía el agua de un tono oscuro y traslúcido similar al vino tinto (un bien entonces importado y costoso), acuñaron metafóricamente el término "un tinto" para describir el compartir cotidiano de esta bebida impregnada del sabor de nuestra tierra.
+                                Históricamente, el grano de café -cuya expansion desde el siglo XVIII lo consolidó como símbolo inequívoco de hospitalidad- propició una práctica cultural única en las clases populares: al observar cómo el filtrado teñía el agua de un tono oscuro y traslúcido similar al vino tinto (un bien entonces importado y costoso), acuñaron metafóricamente el término "un tinto" para describir el compartir cotidiano de esta bebida impregnada del sabor de nuestra tierra.
                             </p>
                             <div class="mt-4 p-4 bg-cafe-light/40 rounded-xl border-l-4 border-amber-900 text-xs text-cafe italic text-justify leading-relaxed">
                                 Al adoptar este legado, la Escuela Nacional de Instructores (ENI) configura un dispositivo de comunicación empática y diálogo genuino. Una taza de café invita a pausar el día para conversar sin prisa, escuchar las realidades locales y construir colectivamente la excelencia y calidad en la formación profesional integral desde el reconocimiento mutuo.
@@ -360,178 +360,48 @@
                 </div>
             </section>
 
-           <section id="territorio" class="tab-content space-y-6 animate-fade-in hidden">
-    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-        <div class="flex flex-col lg:flex-row gap-8">
-            
-            <div class="w-full lg:w-1/2 flex flex-col items-center">
-                <h3 class="text-base font-bold text-cafe mb-4 text-center w-full flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-map-location-dot text-sena-green"></i> Regionales Priorizadas
-                </h3>
-                
-                <div class="w-full max-w-[420px] rounded-xl border border-gray-200 overflow-hidden shadow-md bg-white p-2">
-                    <div class="w-full bg-gray-100 flex items-center justify-center rounded-lg overflow-hidden border border-gray-200">
-                        <img src="./mapacolombia.png" alt="Regionales Priorizadas Mapa Oficial" class="w-full h-auto object-contain max-h-[360px] onerror-fallback">
-                    </div>
-                </div>
-                <p class="text-[10px] text-gray-400 mt-3 italic text-center leading-relaxed">Presencia del SENA en 1.102 municipios de Colombia y 118 centros de formación.</p>
-            </div>
+            <section id="territorio" class="tab-content space-y-6 animate-fade-in hidden">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        
+                        <div class="w-full lg:w-1/2 flex flex-col items-center">
+                            <h3 class="text-base font-bold text-cafe mb-4 text-center w-full flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-map-location-dot text-sena-green"></i> Regionales Priorizadas
+                            </h3>
+                            
+                            <div class="w-full max-w-[420px] rounded-xl border border-gray-200 overflow-hidden shadow-md bg-white p-2">
+                                <div class="w-full bg-gray-100 flex items-center justify-center rounded-lg overflow-hidden border border-gray-200">
+                                    <img src="./mapacolombia.png" alt="Regionales Priorizadas Mapa Oficial" class="w-full h-auto object-contain max-h-[360px] onerror-fallback">
+                                </div>
+                            </div>
+                            <p class="text-[10px] text-gray-400 mt-3 italic text-center leading-relaxed">Presencia del SENA en 1.102 municipios de Colombia y 118 centros de formación.</p>
+                        </div>
 
-            <div class="w-full lg:w-1/2 flex flex-col justify-between">
-                <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 h-full flex flex-col justify-between shadow-xs">
-                    
-                    <div>
-                        <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-3">Seleccione un Territorio Priorizado:</span>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6" id="region-list"></div>
-                    </div>
-                    
-                    <div class="border-t border-gray-200 pt-4 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2" id="region-title">
-                                Contexto Territorial
-                            </h4>
-                            <div class="text-xs text-gray-700 space-y-3 leading-relaxed" id="region-desc">
-                                <p class="text-gray-500 italic text-justify">Selecciona un territorio arriba para cargar la información técnica del Equipo de Trabajo.</p>
+                        <div class="w-full lg:w-1/2 flex flex-col justify-between">
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 h-full flex flex-col justify-between shadow-xs">
+                                
+                                <div>
+                                    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-3">Seleccione un Territorio Priorizado:</span>
+                                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6" id="region-list"></div>
+                                </div>
+                                
+                                <div class="border-t border-gray-200 pt-4 flex-grow flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2" id="region-title">
+                                            Contexto Territorial
+                                        </h4>
+                                        <div class="text-xs text-gray-700 space-y-3 leading-relaxed" id="region-desc">
+                                            <p class="text-gray-500 italic text-justify">Selecciona un territorio arriba para cargar la información técnica del Equipo de Trabajo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
 
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        // 1. Matriz de datos extraída fielmente de tu tabla
-        const datosRegionales = {
-            "Arauca": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
-            "Casanare": { eni: "Tarik Alexander Luna Villarreal", formador: "Alejandro Gómez Pérez", barista: "Dora Ligia Castaño" },
-            "Caquetá": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
-            "Cesar": { eni: "Por Asignar", formador: "Por Asignar", barista: "Dora Ligia Castaño" },
-            "Chocó": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
-            "Guainía": { eni: "Tarik Alexander Luna Villarreal", formador: "Alejandro Gómez Pérez", barista: "Dora Ligia Castaño" },
-            "Guaviare": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
-            "La Guajira": { eni: "Por Asignar", formador: "Por Asignar", barista: "Dora Ligia Castaño" },
-            "Putumayo": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
-            "San Andrés": { eni: "Tarik Alexander Luna Villarreal / Alexander Soto Claros", formador: "Alejandro Gómez Pérez / Andrés Ricardo Fuentes Díaz", barista: "Dora Ligia Castaño" },
-            "Vaupés": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
-            "Vichada": { eni: "Por Asignar", formador: "Por Asignar", barista: "Por Asignar" }
-        };
-
-        const containerBotonera = document.getElementById('region-list');
-        const txtTitulo = document.getElementById('region-title');
-        const txtDescripcion = document.getElementById('region-desc');
-
-        // 2. Generación e inyección dinámica de los 12 botones
-        Object.keys(datosRegionales).forEach(nombreRegion => {
-            const boton = document.createElement('button');
-            boton.type = 'button';
-            boton.className = 'region-btn px-3 py-2 text-xs font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:border-gray-300 transition-all text-center truncate';
-            boton.textContent = nombreRegion;
-            
-            // Evento de escucha para el clic
-            boton.addEventListener('click', () => {
-                // Desmarcar botón anterior y marcar el activo
-                document.querySelectorAll('.region-btn').forEach(b => b.classList.remove('border-sena-green', 'bg-green-50', 'text-sena-green', 'font-semibold'));
-                boton.classList.add('border-sena-green', 'bg-green-50', 'text-sena-green', 'font-semibold');
-                
-                // Actualizar la tarjeta con la información correspondiente
-                actualizarTarjeta(nombreRegion, datosRegionales[nombreRegion]);
-            });
-
-            containerBotonera.appendChild(boton);
-        });
-
-        // 3. Función encargada de renderizar los datos estructurados en la tarjeta
-        function actualizarTarjeta(nombre, info) {
-            txtTitulo.innerHTML = `<i class="fa-solid fa-users text-sena-green"></i> Equipo Regional ${nombre}`;
-            
-            txtDescripcion.innerHTML = `
-                <div class="space-y-3 mt-2">
-                    <div class="p-2 bg-white rounded-lg border border-gray-100 shadow-2xs">
-                        <span class="block text-[10px] font-bold uppercase tracking-wide text-gray-400">Profesional ENI</span>
-                        <span class="text-xs font-semibold text-gray-800">${info.eni}</span>
-                    </div>
-                    <div class="p-2 bg-white rounded-lg border border-gray-100 shadow-2xs">
-                        <span class="block text-[10px] font-bold uppercase tracking-wide text-gray-400">Formador de Instructores</span>
-                        <span class="text-xs font-semibold text-gray-800">${info.formador}</span>
-                    </div>
-                    <div class="p-2 bg-white rounded-lg border border-gray-100 shadow-2xs">
-                        <span class="block text-[10px] font-bold uppercase tracking-wide text-gray-400">Instructor Barista</span>
-                        <span class="text-xs font-semibold text-gray-800">${info.barista}</span>
                     </div>
                 </div>
-            `;
-        }
-    </script>
-</section>
-<script>
-    // 1. Matriz de datos extraída fielmente de tu tabla
-    const datosRegionales = {
-        "Arauca": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
-        "Casanare": { eni: "Tarik Alexander Luna Villarreal", formador: "Alejandro Gómez Pérez", barista: "Dora Ligia Castaño" },
-        "Caquetá": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
-        "Cesar": { eni: "Por Asignar", formador: "Por Asignar", barista: "Dora Ligia Castaño" },
-        "Chocó": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
-        "Guainía": { eni: "Tarik Alexander Luna Villarreal", formador: "Alejandro Gómez Pérez", barista: "Dora Ligia Castaño" },
-        "Guaviare": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
-        "La Guajira": { eni: "Por Asignar", formador: "Por Asignar", barista: "Dora Ligia Castaño" },
-        "Putumayo": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
-        "San Andrés": { eni: "Tarik Alexander Luna Villarreal / Alexander Soto Claros", formador: "Alejandro Gómez Pérez / Andrés Ricardo Fuentes Díaz", barista: "Dora Ligia Castaño" },
-        "Vaupés": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
-        "Vichada": { eni: "Por Asignar", formador: "Por Asignar", barista: "Por Asignar" } // Se asume por asignar al estar vacío en la imagen
-    };
-
-    const containerBotonera = document.getElementById('region-list');
-    const txtTitulo = document.getElementById('region-title');
-    const txtDescripcion = document.getElementById('region-desc');
-
-    // 2. Generación e inyección dinámica de los 12 botones
-    Object.keys(datosRegionales).forEach(nombreRegion => {
-        const boton = document.createElement('button');
-        boton.type = 'button';
-        // Estilos adaptables y limpios para cada botón
-        boton.className = 'region-btn px-3 py-2 text-xs font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:border-gray-300 transition-all text-center truncate';
-        boton.textContent = nombreRegion;
-        
-        // Evento de escucha para el clic
-        boton.addEventListener('click', () => {
-            // Desmarcar botón anterior y marcar el activo
-            document.querySelectorAll('.region-btn').forEach(b => b.classList.remove('border-sena-green', 'bg-green-50', 'text-sena-green', 'font-semibold'));
-            boton.classList.add('border-sena-green', 'bg-green-50', 'text-sena-green', 'font-semibold');
-            
-            // Actualizar la tarjeta con la información correspondiente
-            actualizarTarjeta(nombreRegion, datosRegionales[nombreRegion]);
-        });
-
-        containerBotonera.appendChild(boton);
-    });
-
-    // 3. Función encargada de renderizar los datos estructurados en la tarjeta
-    function actualizarTarjeta(nombre, info) {
-        // Cambiamos el título de la tarjeta
-        txtTitulo.innerHTML = `<i class="fa-solid fa-users text-sena-green"></i> Equipo Regional ${nombre}`;
-        
-        // Estructuramos el diseño del listado del equipo
-        txtDescripcion.innerHTML = `
-            <div class="space-y-3 mt-2">
-                <div class="p-2 bg-white rounded-lg border border-gray-100 shadow-2xs">
-                    <span class="block text-[10px] font-bold uppercase tracking-wide text-gray-400">Profesional ENI</span>
-                    <span class="text-xs font-semibold text-gray-800">${info.eni}</span>
-                </div>
-                <div class="p-2 bg-white rounded-lg border border-gray-100 shadow-2xs">
-                    <span class="block text-[10px] font-bold uppercase tracking-wide text-gray-400">Formador de Instructores</span>
-                    <span class="text-xs font-semibold text-gray-800">${info.formador}</span>
-                </div>
-                <div class="p-2 bg-white rounded-lg border border-gray-100 shadow-2xs">
-                    <span class="block text-[10px] font-bold uppercase tracking-wide text-gray-400">Instructor Barista</span>
-                    <span class="text-xs font-semibold text-gray-800">${info.barista}</span>
-                </div>
-            </div>
-        `;
-    }
-</script>
+            </section>
 
             <section id="componentes" class="tab-content space-y-8 animate-fade-in hidden">
                 
@@ -577,7 +447,7 @@
                     </div>
                     <div class="p-6 space-y-4 text-xs">
                         <div>
-                            <span class="font-bold text-gray-400 uppercase text-[10px] block mb-0.5">Objetivo:</span> 
+                            <span class="font-bold text-gray-400 uppercase text-[10px] block mb-0.5">Objective:</span> 
                             <p class="text-gray-900 text-sm font-semibold text-justify leading-relaxed">Desarrollar los encuentros de la Estrategia "Entre Tintos y Experiencias", a través de metodologías dialógicas y de interacción horizontal que contemplen la sensibilización general, la escucha activa, el despliegue práctico de los ejes de Acompañamiento, Investigación y Formación, y la documentación de los saberes en correspondencia con las realidades locales.</p>
                         </div>
                         
@@ -752,34 +622,34 @@
             </section>
 
             <section id="descargar-informe" class="tab-content space-y-6 animate-fade-in hidden">
-    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center max-w-3xl mx-auto">
-        <div class="w-20 h-20 bg-emerald-50 text-sena-green rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-100 shadow-sm">
-            <i class="fa-solid fa-file-pdf"></i>
-        </div>
-        <h3 class="text-xl font-bold text-cafe mb-2">Descargar Documentos e Informe Ejecutivo</h3>
-        <p class="text-xs text-gray-500 mb-8 max-w-md mx-auto leading-relaxed">
-            Obtenga las versiones consolidadas de la Estrategia "Entre Tintos y Experiencias". Descargue los archivos directamente para su lectura offline o acceda a la versión de impresión institucional.
-        </p>
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center max-w-3xl mx-auto">
+                    <div class="w-20 h-20 bg-emerald-50 text-sena-green rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-100 shadow-sm">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-cafe mb-2">Descargar Documentos e Informe Ejecutivo</h3>
+                    <p class="text-xs text-gray-500 mb-8 max-w-md mx-auto leading-relaxed">
+                        Obtenga las versiones consolidadas de la Estrategia "Entre Tintos y Experiencias". Descargue los archivos directamente para su lectura offline o acceda a la versión de impresión institucional.
+                    </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-8">
-            <a href="./Entre tintos_territorios_Final.pdf" download="Entre tintos_territorios_Final.pdf" 
-               class="px-5 py-3.5 bg-sena-green hover:bg-[#329600] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
-                <i class="fa-solid fa-cloud-arrow-down text-sm"></i> Informe Territorios
-            </a>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-8">
+                        <a href="./Entre tintos_territorios_Final.pdf" download="Entre tintos_territorios_Final.pdf" 
+                           class="px-5 py-3.5 bg-sena-green hover:bg-[#329600] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-cloud-arrow-down text-sm"></i> Informe Territorios
+                        </a>
 
-            <a href="./Entre_Tintos_y_Experiencias.pdf" download="Entre_Tintos_y_Experiencias.pdf" 
-               class="px-5 py-3.5 bg-sena-green hover:bg-[#329600] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
-                <i class="fa-solid fa-cloud-arrow-down text-sm"></i> Informe General
-            </a>
-        </div>
+                        <a href="./Entre_Tintos_y_Experiencias.pdf" download="Entre_Tintos_y_Experiencias.pdf" 
+                           class="px-5 py-3.5 bg-sena-green hover:bg-[#329600] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-cloud-arrow-down text-sm"></i> Informe General
+                        </a>
+                    </div>
 
-        <hr class="border-gray-100 my-6 max-w-xl mx-auto">
+                    <hr class="border-gray-100 my-6 max-w-xl mx-auto">
 
-        <button onclick="window.print()" class="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-lg transition-all inline-flex items-center gap-2 cursor-pointer">
-            <i class="fa-solid fa-print"></i> Vista de impresión de la página
-        </button>
-    </div>
-</section>
+                    <button onclick="window.print()" class="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-lg transition-all inline-flex items-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-print"></i> Vista de impresión de la página
+                    </button>
+                </div>
+            </section>
 
         </main>
 
@@ -806,41 +676,57 @@
     </div>
 
     <script>
-        // Datos de Regionales provistos fielmente
+        // 1. Matriz Única de Datos del Equipo Técnico (Extraída fielmente de tu Tabla Excel)
         const regionesData = {
-            'Arauca': { eni: 'En blanco', formador: '...', barista: '...' },
-            'Caquetá': { eni: 'En blanco', formador: '...', barista: '...' },
-            'Casanare': { eni: 'En blanco', formador: '...', barista: '...' },
-            'Cesar': { eni: 'En blanco', formador: '...', barista: '...' },
-            'Chocó': { eni: 'En blanco', formador: '...', barista: '...' },
-            'Guainía': { eni: 'En blanco', formador: '...', barista: '...' },
-            'Guaviare': { eni: 'En blanco', formador: '...', barista: '...' },
-            'La Guajira': { eni: 'En blanco', formador: '...', barista: '...' },
-            'Putumayo': { eni: 'En blanco', formador: '...', barista: '...' },
-            'San Andrés': { eni: 'En blanco', formador: '...', barista: '...' },
-            'Vaupés': { eni: 'En blanco', formador: '...', barista: '...' },
-            'Vichada': { eni: 'En blanco', formador: '...', barista: '...' }
+            "Arauca": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
+            "Casanare": { eni: "Tarik Alexander Luna Villarreal", formador: "Alejandro Gómez Pérez", barista: "Dora Ligia Castaño" },
+            "Caquetá": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
+            "Cesar": { eni: "Por Asignar", formador: "Por Asignar", barista: "Dora Ligia Castaño" },
+            "Chocó": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
+            "Guainía": { eni: "Tarik Alexander Luna Villarreal", formador: "Alejandro Gómez Pérez", barista: "Dora Ligia Castaño" },
+            "Guaviare": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
+            "La Guajira": { eni: "Por Asignar", formador: "Por Asignar", barista: "Dora Ligia Castaño" },
+            "Putumayo": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
+            "San Andrés": { eni: "Tarik Alexander Luna Villarreal / Alexander Soto Claros", formador: "Alejandro Gómez Pérez / Andrés Ricardo Fuentes Díaz", barista: "Dora Ligia Castaño" },
+            "Vaupés": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
+            "Vichada": { eni: "Por Asignar", formador: "Por Asignar", barista: "Por Asignar" }
         };
 
-        // Renderizado del Listado Regional Autónomo
-        const containerLista = document.getElementById('region-list');
-        if (containerLista) {
-            containerLista.innerHTML = ''; 
+        // 2. Renderizado Inicial de la Botonera Interactiva
+        document.addEventListener("DOMContentLoaded", () => {
+            const containerLista = document.getElementById('region-list');
+            if (containerLista) {
+                containerLista.innerHTML = ''; 
 
-            Object.keys(regionesData).forEach((reg, index) => {
-                const btn = document.createElement('button');
-                btn.className = "region-item-btn text-[11px] bg-white border border-gray-200 text-left px-2.5 py-2 rounded-lg hover:border-sena-green transition-colors font-medium text-gray-700 block truncate w-full shadow-2xs cursor-pointer";
-                btn.innerHTML = `<i class="fa-solid fa-mug-hot text-amber-900 mr-1.5 text-[10px]"></i> ${reg}`;
-                btn.onclick = (event) => selectRegion(reg, event.currentTarget);
-                
-                if (index === 0) {
-                    setTimeout(() => selectRegion(reg, btn), 100);
-                }
-                containerLista.appendChild(btn);
-            });
-        }
+                Object.keys(regionesData).forEach((reg, index) => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = "region-item-btn text-[11px] bg-white border border-gray-200 text-left px-2.5 py-2 rounded-lg hover:border-sena-green transition-colors font-medium text-gray-700 block truncate w-full shadow-2xs cursor-pointer";
+                    btn.innerHTML = `<i class="fa-solid fa-mug-hot text-amber-900 mr-1.5 text-[10px]"></i> ${reg}`;
+                    
+                    btn.onclick = (event) => selectRegion(reg, event.currentTarget);
+                    
+                    // Cargar por defecto el primer elemento (Arauca)
+                    if (index === 0) {
+                        setTimeout(() => selectRegion(reg, btn), 100);
+                    }
+                    containerLista.appendChild(btn);
+                });
+            }
 
-        // Motor del Tabulador Dinámico
+            // Fallback visual en caso de ausencia física de la imagen del mapa
+            const fallbackImg = document.querySelector('.onerror-fallback');
+            if (fallbackImg) {
+                fallbackImg.onerror = function() {
+                    this.style.display = 'none';
+                    const parent = this.parentNode;
+                    parent.className = "w-full min-h-[220px] bg-linear-to-br from-emerald-800/5 to-amber-900/5 flex flex-col items-center justify-center p-6 text-center border border-dashed border-gray-300 rounded-lg";
+                    parent.innerHTML = `<i class="fa-solid fa-map-marked-alt text-3xl text-gray-300 mb-2"></i><span class="text-xs font-semibold text-gray-400">Cartografía Institucional "Entre Tintos"</span><span class="text-[10px] text-gray-400 max-w-[240px] mt-1">Cobertura nacional desplegada en las 12 seccionales priorizadas del territorio.</span>`;
+                };
+            }
+        });
+
+        // 3. Motor de Cambio de Pestañas
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -855,7 +741,7 @@
             }
         }
 
-        // Selección e Interacción de Ficha de Datos Regional
+        // 4. Actualización del Panel de Datos de la Región Seleccionada
         function selectRegion(regionName, clickedButton) {
             document.querySelectorAll('.region-item-btn').forEach(btn => btn.classList.remove('active-region'));
             
@@ -864,35 +750,30 @@
             }
 
             const data = regionesData[regionName];
-
             const titleEl = document.getElementById('region-title');
             const descEl = document.getElementById('region-desc');
 
             if(titleEl && descEl && data) {
-                titleEl.innerHTML = `<i class="fa-solid fa-map-pin text-sena-green text-xs"></i> Contexto Territorial: ${regionName}`;
+                titleEl.innerHTML = `<i class="fa-solid fa-map-pin text-sena-green text-xs"></i> Contexto Territorial: ${regionName.toUpperCase()}`;
                 descEl.innerHTML = `
                     <p class="font-bold text-sena-green text-[10px] uppercase tracking-wider mb-2">Equipo de Trabajo</p>
                     <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-inner space-y-2.5 text-xs">
-                        <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-50 pb-1.5"><span class="font-bold text-gray-700 w-44 block">Profesional ENI:</span> <span class="text-gray-400 italic mt-0.5 sm:mt-0">${data.eni}</span></div>
-                        <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-50 pb-1.5"><span class="font-bold text-gray-700 w-44 block">Formador de Instructores:</span> <span class="text-gray-500 font-mono mt-0.5 sm:mt-0">${data.formador}</span></div>
-                        <div class="flex flex-col sm:flex-row sm:items-center"><span class="font-bold text-gray-700 w-44 block">Barista:</span> <span class="text-gray-500 font-mono mt-0.5 sm:mt-0">${data.barista}</span></div>
+                        <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-50 pb-1.5">
+                            <span class="font-bold text-gray-700 w-44 block">Profesional ENI:</span> 
+                            <span class="text-gray-800 font-semibold mt-0.5 sm:mt-0">${data.eni}</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-50 pb-1.5">
+                            <span class="font-bold text-gray-700 w-44 block">Formador de Instructores:</span> 
+                            <span class="text-gray-800 font-semibold mt-0.5 sm:mt-0">${data.formador}</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center">
+                            <span class="font-bold text-gray-700 w-44 block">Barista:</span> 
+                            <span class="text-gray-800 font-semibold mt-0.5 sm:mt-0">${data.barista}</span>
+                        </div>
                     </div>
                 `;
             }
         }
-
-        // Fallback visual elegante en caso de ausencia física del asset cartográfico regional
-        document.addEventListener("DOMContentLoaded", () => {
-            const fallbackImg = document.querySelector('.onerror-fallback');
-            if (fallbackImg) {
-                fallbackImg.onerror = function() {
-                    this.style.display = 'none';
-                    const parent = this.parentNode;
-                    parent.className = "w-full min-h-[220px] bg-linear-to-br from-emerald-800/5 to-amber-900/5 flex flex-col items-center justify-center p-6 text-center border border-dashed border-gray-300 rounded-lg";
-                    parent.innerHTML = `<i class="fa-solid fa-map-marked-alt text-3xl text-gray-300 mb-2"></i><span class="text-xs font-semibold text-gray-400">Cartografía Institucional "Entre Tintos"</span><span class="text-[10px] text-gray-400 max-w-[240px] mt-1">Cobertura nacional desplegada en las 12 seccionales priorizadas del territorio.</span>`;
-                };
-            }
-        });
     </script>
 </body>
 </html>
