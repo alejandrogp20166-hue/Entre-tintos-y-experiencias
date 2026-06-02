@@ -360,7 +360,7 @@
                 </div>
             </section>
 
-            <section id="territorio" class="tab-content space-y-6 animate-fade-in hidden">
+           <section id="territorio" class="tab-content space-y-6 animate-fade-in hidden">
     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
         <div class="flex flex-col lg:flex-row gap-8">
             
@@ -382,17 +382,16 @@
                     
                     <div>
                         <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-3">Seleccione un Territorio Priorizado:</span>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6" id="region-list">
-                            </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6" id="region-list"></div>
                     </div>
                     
                     <div class="border-t border-gray-200 pt-4 flex-grow flex flex-col justify-between">
                         <div>
-                            <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-2 flex items-center gap-2" id="region-title">
+                            <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2" id="region-title">
                                 Contexto Territorial
                             </h4>
-                            <div class="text-xs text-gray-700 space-y-3 leading-relaxed text-justify" id="region-desc">
-                                <p class="text-gray-500 italic">Selecciona un territorio arriba para cargar la información técnica del Equipo de Trabajo.</p>
+                            <div class="text-xs text-gray-700 space-y-3 leading-relaxed" id="region-desc">
+                                <p class="text-gray-500 italic text-justify">Selecciona un territorio arriba para cargar la información técnica del Equipo de Trabajo.</p>
                             </div>
                         </div>
                     </div>
@@ -403,6 +402,73 @@
         </div>
     </div>
 </section>
+
+<script>
+    // 1. Matriz de datos extraída fielmente de tu tabla
+    const datosRegionales = {
+        "Arauca": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
+        "Casanare": { eni: "Tarik Alexander Luna Villarreal", formador: "Alejandro Gómez Pérez", barista: "Dora Ligia Castaño" },
+        "Caquetá": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
+        "Cesar": { eni: "Por Asignar", formador: "Por Asignar", barista: "Dora Ligia Castaño" },
+        "Chocó": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
+        "Guainía": { eni: "Tarik Alexander Luna Villarreal", formador: "Alejandro Gómez Pérez", barista: "Dora Ligia Castaño" },
+        "Guaviare": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
+        "La Guajira": { eni: "Por Asignar", formador: "Por Asignar", barista: "Dora Ligia Castaño" },
+        "Putumayo": { eni: "Alexander Soto Claros", formador: "Hector Fabio Hoyos Giraldo", barista: "Jeferson Lopez" },
+        "San Andrés": { eni: "Tarik Alexander Luna Villarreal / Alexander Soto Claros", formador: "Alejandro Gómez Pérez / Andrés Ricardo Fuentes Díaz", barista: "Dora Ligia Castaño" },
+        "Vaupés": { eni: "Alexander Soto Claros", formador: "Andrés Ricardo Fuentes Díaz", barista: "Jeferson Lopez" },
+        "Vichada": { eni: "Por Asignar", formador: "Por Asignar", barista: "Por Asignar" } // Se asume por asignar al estar vacío en la imagen
+    };
+
+    const containerBotonera = document.getElementById('region-list');
+    const txtTitulo = document.getElementById('region-title');
+    const txtDescripcion = document.getElementById('region-desc');
+
+    // 2. Generación e inyección dinámica de los 12 botones
+    Object.keys(datosRegionales).forEach(nombreRegion => {
+        const boton = document.createElement('button');
+        boton.type = 'button';
+        // Estilos adaptables y limpios para cada botón
+        boton.className = 'region-btn px-3 py-2 text-xs font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:border-gray-300 transition-all text-center truncate';
+        boton.textContent = nombreRegion;
+        
+        // Evento de escucha para el clic
+        boton.addEventListener('click', () => {
+            // Desmarcar botón anterior y marcar el activo
+            document.querySelectorAll('.region-btn').forEach(b => b.classList.remove('border-sena-green', 'bg-green-50', 'text-sena-green', 'font-semibold'));
+            boton.classList.add('border-sena-green', 'bg-green-50', 'text-sena-green', 'font-semibold');
+            
+            // Actualizar la tarjeta con la información correspondiente
+            actualizarTarjeta(nombreRegion, datosRegionales[nombreRegion]);
+        });
+
+        containerBotonera.appendChild(boton);
+    });
+
+    // 3. Función encargada de renderizar los datos estructurados en la tarjeta
+    function actualizarTarjeta(nombre, info) {
+        // Cambiamos el título de la tarjeta
+        txtTitulo.innerHTML = `<i class="fa-solid fa-users text-sena-green"></i> Equipo Regional ${nombre}`;
+        
+        // Estructuramos el diseño del listado del equipo
+        txtDescripcion.innerHTML = `
+            <div class="space-y-3 mt-2">
+                <div class="p-2 bg-white rounded-lg border border-gray-100 shadow-2xs">
+                    <span class="block text-[10px] font-bold uppercase tracking-wide text-gray-400">Profesional ENI</span>
+                    <span class="text-xs font-semibold text-gray-800">${info.eni}</span>
+                </div>
+                <div class="p-2 bg-white rounded-lg border border-gray-100 shadow-2xs">
+                    <span class="block text-[10px] font-bold uppercase tracking-wide text-gray-400">Formador de Instructores</span>
+                    <span class="text-xs font-semibold text-gray-800">${info.formador}</span>
+                </div>
+                <div class="p-2 bg-white rounded-lg border border-gray-100 shadow-2xs">
+                    <span class="block text-[10px] font-bold uppercase tracking-wide text-gray-400">Instructor Barista</span>
+                    <span class="text-xs font-semibold text-gray-800">${info.barista}</span>
+                </div>
+            </div>
+        `;
+    }
+</script>
 
             <section id="componentes" class="tab-content space-y-8 animate-fade-in hidden">
                 
