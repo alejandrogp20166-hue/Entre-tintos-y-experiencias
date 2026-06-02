@@ -622,19 +622,34 @@
             </section>
 
             <section id="descargar-informe" class="tab-content space-y-6 animate-fade-in hidden">
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center max-w-2xl mx-auto">
-                    <div class="w-20 h-20 bg-emerald-50 text-sena-green rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-100 shadow-sm">
-                        <i class="fa-solid fa-file-pdf"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-cafe mb-2">Descargar Informe Ejecutivo Completo</h3>
-                    <p class="text-xs text-gray-500 mb-6 max-w-md mx-auto leading-relaxed">
-                        Obtenga la versión consolidada del informe de la Estrategia "Entre Tintos y Experiencias" con todos sus componentes organizados estructuralmente para su lectura offline o impresión institucional.
-                    </p>
-                    <button onclick="window.print()" class="px-6 py-3 bg-sena-green hover:bg-[#329600] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md transition-all inline-flex items-center gap-2 cursor-pointer">
-                        <i class="fa-solid fa-print"></i> Imprimir o Guardar como PDF
-                    </button>
-                </div>
-            </section>
+    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center max-w-3xl mx-auto">
+        <div class="w-20 h-20 bg-emerald-50 text-sena-green rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-100 shadow-sm">
+            <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <h3 class="text-xl font-bold text-cafe mb-2">Descargar Documentos e Informe Ejecutivo</h3>
+        <p class="text-xs text-gray-500 mb-8 max-w-md mx-auto leading-relaxed">
+            Obtenga las versiones consolidadas de la Estrategia "Entre Tintos y Experiencias". Descargue los archivos directamente para su lectura offline o acceda a la versión de impresión institucional.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-8">
+            <a href="./Entre tintos_territorios_Final.pdf" download="Entre_tintos_territorios_Final.pdf" 
+               class="px-5 py-3.5 bg-sena-green hover:bg-[#329600] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-cloud-arrow-down text-sm"></i> Informe Territorios
+            </a>
+
+            <a href="./entretintos.pdf" download="entretintos.pdf" 
+               class="px-5 py-3.5 bg-sena-green hover:bg-[#329600] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-md transition-all inline-flex items-center justify-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-cloud-arrow-down text-sm"></i> Informe General
+            </a>
+        </div>
+
+        <hr class="border-gray-100 my-6 max-w-xl mx-auto">
+
+        <button onclick="window.print()" class="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-semibold rounded-lg transition-all inline-flex items-center gap-2 cursor-pointer">
+            <i class="fa-solid fa-print"></i> Vista de impresión de la página
+        </button>
+    </div>
+</section>
 
         </main>
 
